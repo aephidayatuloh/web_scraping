@@ -3,6 +3,15 @@ library(stringr)
 library(readr)
 library(rvest)
 
+url <- "https://id.wikipedia.org/wiki/Daftar_kota_di_Indonesia_menurut_provinsi"
+
+url %>% 
+  read_html() %>%
+  html_nodes("p") %>% 
+  html_text() %>%
+  .[1] # ambil element pertama dari vector
+
+
 # Scraping Data Stok Beras
 url_stock <- "http://www.foodstation.co.id/beras/stockberas/inc/get_stock_beras.php?idbulan=04"
 
