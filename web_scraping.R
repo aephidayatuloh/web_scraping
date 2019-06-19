@@ -11,6 +11,8 @@ url %>%
   html_text() %>%
   .[1] # ambil element pertama dari vector
 
+# Ambil tabel kedua yang ada di halaman url
+url %>% read_html() %>% html_table()[2]
 
 # Scraping Data Stok Beras
 url_stock <- "http://www.foodstation.co.id/beras/stockberas/inc/get_stock_beras.php?idbulan=04"
